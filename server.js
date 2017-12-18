@@ -3,7 +3,6 @@
 const express = require('express');
 const cors = require('cors');
 const pg = require('pg');
-const fs = required('fs');
 const bodyParser = require('body-parser');
 const superagent = require('superagent');
 
@@ -73,6 +72,43 @@ app.delete('/api/v1/users/:user_id', (request, response) => {
 });
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
+
+function loadDataBase() {
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    users (
+      user_id SERIAL PRIMARY KEY,
+      username VARCHAR(12) UNIQUE NOT NULL,
+      password VARCHAR (16)
+    );`
+  )
+    .then(loadUsers)
+    .catch(console.error);
+
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    workout_routine (
+      routine_id SERIAL PRIMARY KEY,
+      user_id INTEGER NOT NULL REFERENCES user(user_id),
+      monday1 VARCHAR(255),
+      monday2 VARCHAR(255),
+      tuesday1 VARCHAR(255),
+      tuesday2 VARCHAR(255),
+      wednesday1 VARCHAR(255),
+      wednesday2 VARCHAR(255),
+      thursday1 VARCHAR(255),
+      thursday2 VARCHAR(255),
+      friday1 VARCHAR(255),
+      friday2 VARCHAR(255),
+      saturday1 VARCHAR(255),
+      saturday2 VARCHAR(255),
+      sunday1 VARCHAR(255),
+      sunday2 VARCHAR(255)
+    );`
+  )
+    .then(loadWorkoutRoutines)
+    .catch(console.error);
+}
 
 // export PORT=3000
 // export CLIENT_URL=http://localhost:8080
