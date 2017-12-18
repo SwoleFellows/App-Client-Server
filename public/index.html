@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>SwoleFellows</title>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="styles/modules.css">
+  </head>
+
+  <body>
+
+    <header>
+      <img src="placeholder" alt="logo">
+      <h1>SwoleFellows</h1>
+      <nav>
+        <ul>
+          <li id="login">login</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <form id="login-form">
+        <h2>Log into SwoleFellows</h2>
+        <input type="text" name="username" id="swolefellow-username" placeholder="username" required>
+        <input type="text" name="password" id="swolefellow-password" placeholder="password" required>
+      </form>
+
+      <form id="register-form">
+        <h2>Register to become a SwoleFellow</h2>
+        <input type="text" name="username" id="username" placeholder="username" required>
+        <input type="text" name="password" id="password" placeholder="password" required>
+        <textarea name="description of goals" id="goals" rows="8" cols="40" placeholder="description of goals..." required></textarea>
+        <button id="new-user" type="submit">Submit New SwoleFellow</button>
+      </form>
+    </main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li>Facebook</li>
+          <li>Twitter</li>
+          <li>Instagram</li>
+          <li>Slack</li>
+          <li>Github</li>
+        </ul>
+      </nav>
+      <p>Code 301 - 2017</p>
+      <p>Dean - Dan - Richard</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <scripts src="server.js"></scripts>
+    <scripts src="swole.js"></scripts>
+    <scripts src="swole-view.js"></scripts>
+  </body>
+</html>
