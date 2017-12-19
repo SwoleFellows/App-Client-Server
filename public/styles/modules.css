@@ -24,7 +24,7 @@ header {
   width: 100px;
 }
 
-#register_sucess {
+.register_success {
   display: none;
   color: white;
 }

@@ -37,7 +37,7 @@ var app = app || {};
       console.log(user);
       $.post(`${__API_URL__}/api/v1/users`, user)
       .then($('#register-form')[0].reset())
-      .then($('#register_success').show())
+      .then($('.register_success').show())
       .then($('.register').fadeOut(2000))
       .then($('.login').fadeIn(3000))
       .catch(console.error);
