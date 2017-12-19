@@ -11,9 +11,9 @@ var app = app || {}
   Search.all = [];
 
   Search.prototype.toHtml = function () {
-    let template = Handlebars.compile($('#results-template').text());
+    let exerciseTemplate = Handlebars.compile($('#results-template').text());
 
-    return template(this);
+    return exerciseTemplate(this);
   };
 
   Search.loadAll = rd => {
@@ -22,6 +22,31 @@ var app = app || {}
     if (rd.prev) $('div[data-api_prev]').data('api_prev', rd.prev);
   };
 
+  Search.populateFilter = rdo => {
+    let filterTemplate = Handlebars.compile($('#filter-template').text());
+    $('#equipment').empty().append(filterTemplate({value: '', name: 'Choose equipment type...'}));
+    $('#musclegroup').empty().append(filterTemplate({value: '', name: 'Choose muscle group...'}));
+    $.get(`${__API_URL__}/api/v1/filters/equipment`)
+      .then(res => res.results.map((val) => {
+        $('#equipment').append(filterTemplate(val));
+      }
+    ));
+    $.get(`${__API_URL__}/api/v1/filters/musclegroup`)
+      .then(res => res.results.map((val) => {
+        $('#musclegroup').append(filterTemplate(val));
+      }
+    ));
+  }
+
   module.Search = Search;
 
 })(app)
+
+
+// Book.searchOne = (isbn, call) => {
+//   console.log('searching', isbn)
+//   $.get(`${__API_URL__}/api/v1/books/find/${isbn}`)
+//     .then(res => new Book(res))
+//     .then(call)
+//     .catch(console.error)
+// }
