@@ -3,12 +3,11 @@ html {
   margin: 0 auto;
 }
 
+
 @media only screen and (min-width: 360px) {
     body {
         background-color: black;
     }
 }
 
-* p {
-  color: white;
-}
+
