@@ -1,3 +1,4 @@
+
 #logo {
   display: block;
   width: 300px;
@@ -9,4 +10,16 @@
   float: left;
   width: 40px;
   margin-left: 5px;
+}
+.register, .login {
+  display: none;
+}
+
+header {
+  background-color: black;
+  height: 100px;
+}
+
+#logo {
+  width: 100px;
 }
