@@ -23,3 +23,8 @@ header {
 #logo {
   width: 100px;
 }
+
+#register_sucess {
+  display: none;
+  color: white;
+}
