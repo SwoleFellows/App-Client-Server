@@ -1,8 +1,10 @@
-header {
-  background-color: black;
-  height: 100px;
+#logo {
+  width: 300px;
 }
 
-#logo {
-  width: 100px;
+.icons {
+  display: block;
+  float: left;
+  width: 40px;
+  margin-left: 5px;
 }

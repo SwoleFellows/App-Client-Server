@@ -25,6 +25,16 @@ response.sendFile('/routine.html'), {root: '/public'}));
 app.get('/search'), (request, response) =>
 response.sendFile('/search.html'), {root: '/public'}));
 
+//retrieve data from wger database
+app.get('/api/ WGER', (request, response) =>{
+  client.query(
+    `SELECT * FROM (database) WHERE category=${request.params.category};`
+  )
+  .then(result => response.send(result.rows))
+  .catch(console.error);
+})
+
+//local database CRUD
 app.get('/api/v1/users/:user_id', (request, response) => {
   client.query(
     `SELECT * FROM users INNER JOIN workout_routine ON user.user_id=routine_id WHERE user_id=${request.params.user_id};`
@@ -71,8 +81,6 @@ app.delete('/api/v1/users/:user_id', (request, response) => {
   .catch(console.error);
 });
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
-
 function loadDataBase() {
   client.query(`
     CREATE TABLE IF NOT EXISTS
@@ -109,6 +117,8 @@ function loadDataBase() {
     .then(loadWorkoutRoutines)
     .catch(console.error);
 }
+
+app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
 
 // export PORT=3000
 // export CLIENT_URL=http://localhost:8080
