@@ -136,3 +136,8 @@ h1 {
     background-position: center;
   }
 }
+
+.register_success {
+  display: none;
+  color: white;
+}

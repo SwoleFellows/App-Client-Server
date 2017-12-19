@@ -30,7 +30,10 @@ var app = app || {};
       };
       console.log(user);
       $.post(`${__API_URL__}/api/v1/users`, user)
-      .then($.get('/search'))
+      .then($('#register-form')[0].reset())
+      .then($('.register_success').show())
+      .then($('.register').fadeOut(2000))
+      .then($('.login').fadeIn(3000))
       .catch(console.error);
     })
   }
@@ -45,7 +48,7 @@ var app = app || {};
         if (res.password === password) {
         localStorage.username = username;
         localStorage.user_id = res.user_id;
-        window.location = './search.html'
+        $.sendfile('/search')
         } else {
         console.log('wrong password');
       }
