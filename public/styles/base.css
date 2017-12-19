@@ -1,6 +1,10 @@
+html {
+  width: 100%;
+  margin: 0 auto;
+}
 
-
-
-@media (min-width: 360px) and (orientation: letter) {
-
+@media only screen and (min-width: 360px) {
+    body {
+        background-color: black;
+    }
 }

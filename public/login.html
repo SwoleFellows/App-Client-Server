@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SwoleFellows Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
+  </head>
+  <body>
+    <header>
+      <!-- <img src="placeholder" alt="logo"> -->
+      <h1>SwoleFellows</h1>
+    </header>
+    <main>
+      <button id="login-button">Login</button>
+      <section class="login container">
+        <form id="login-form">
+          <h2>Log into SwoleFellows</h2>
+          <input type="text" name="username" id="swolefellow-username" pattern="[A-Za-z0-9_]{4,12}" placeholder="Username" required>
+          <input type="text" name="password" id="swolefellow-password" pattern="[A-Za-z0-9_]{8,16}" placeholder="password" required>
+          <button id="user-login" type="submit">Log In</button>
+          <button class="cancel">Cancel</button>
+        </form>
+      </section>
+
+      <button id="register-button">Register</button>
+      <section class="register container">
+        <form id="register-form">
+          <h3>Register New User</h3>
+          <input type="text" name="new-username" id="register-username" pattern="[A-Za-z0-9_]{4,12}" placeholder="Username" required>
+          <input type="text" name="new-password" id="register-password" pattern="[A-Za-z0-9_]{8,16}" placeholder="password" required>
+          <button id="user-signup" type="submit">Sign Up</button>
+          <button class="cancel">Cancel<button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <nav>
+        <ul>
+          <li>Facebook</li>
+          <li>Twitter</li>
+          <li>Instagram</li>
+          <li>Slack</li>
+          <li>Github</li>
+        </ul>
+      </nav>
+      <p>Code 301 - 2017</p>
+      <p>Dean - Dan - Richard</p>
+    </footer>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="scripts/server.js"></script>
+  <script src="./scripts/loginView.js"></script>
+</html>
