@@ -18,12 +18,12 @@ app.use(express.static('/public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.get('/login'), (request, response) =>
-  response.sendFile('/login.html', {root: '/public'});
-app.get('/routine'), (request, response) =>
-  response.sendFile('/routine.html', {root: '/public'});
-app.get('/search'), (request, response) =>
-  response.sendFile('/search.html', {root: '/public'});
+app.get('/', (request, response) =>
+  response.sendFile('/index.html', {root: './public'}));
+app.get('/routine', (request, response) =>
+  response.sendFile('/routine.html', {root: './public'}));
+app.get('/search', (request, response) =>
+  response.sendFile('/search.html', {root: './public'}));
 
 //retrieve data from wger database
 app.get('/api/ WGER', (request, response) =>{
@@ -88,8 +88,6 @@ app.delete('/api/v1/users/:user_id', (request, response) => {
     .then(() => response.send('Deleted'))
     .catch(console.error);
 });
-
-app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
 
 function loadDataBase() {
   client.query(`

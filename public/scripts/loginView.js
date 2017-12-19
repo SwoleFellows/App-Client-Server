@@ -39,17 +39,16 @@ var app = app || {};
     $('#login-form').on('submit', function(event){
       let username = $('#swolefellow-username').val()
       let password = $('#swolefellow-password').val()
-      $.get(`${__API_URL__}/api/v1/users/${username}`);
+      $.get(`${__API_URL__}/api/v1/users/${username}`)
       .then(res => {
         if (res.password === password) {
         localStorage.username = username;
         localStorage.user_id = res.user_id;
         window.location = './search.html'
-        }
-      }
-      else {
+        } else {
         console.log('wrong password');
       }
+    })
     })
   }
 
