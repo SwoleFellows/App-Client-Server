@@ -5,6 +5,8 @@ var app = app || {};
 (function (module) {
   const loginView = {};
 
+  let __API_URL__ = "http://localhost:3000"
+
   loginView.loginForm = function() {
     $('#login-button').click(function() {
 
@@ -27,16 +29,21 @@ var app = app || {};
 
   loginView.registerUser = function() {
     $('#register-form').on('submit', function(event){
+      event.preventDefault();
       let user = {
         username: $('#register-username').val(),
         password: $('#register-password').val()
       };
-      $.post(`${__API_URL__}/api/v1/users`, user);
+      console.log(user);
+      $.post(`${__API_URL__}/api/v1/users`, user)
+      .then($.get('/search'))
+      .catch(console.error);
     })
   }
 
   loginView.verifyUser = function() {
     $('#login-form').on('submit', function(event){
+      event.preventDefault();
       let username = $('#swolefellow-username').val()
       let password = $('#swolefellow-password').val()
       $.get(`${__API_URL__}/api/v1/users/${username}`)
@@ -57,3 +64,4 @@ var app = app || {};
 
 app.loginView.loginForm();
 app.loginView.registerForm();
+app.loginView.registerUser();
