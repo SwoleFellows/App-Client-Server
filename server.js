@@ -5,7 +5,7 @@ const cors = require('cors');
 const pg = require('pg');
 const bodyParser = require('body-parser');
 const superagent = require('superagent');
-
+const WGER_KEY = process.env.WGER_KEY;
 const app = express();
 const PORT = process.env.PORT;
 const client = new pg.Client(process.env.DATABASE_URL);
@@ -24,15 +24,6 @@ app.get('/routine', (request, response) =>
   response.sendFile('routine.html', {root: './public'}));
 app.get('/search', (request, response) =>
   response.sendFile('search.html', {root: './public'}));
-
-//retrieve data from wger database
-app.get('/api/ WGER', (request, response) =>{
-  client.query(
-    `SELECT * FROM (database) WHERE category=${request.params.category};`
-  )
-  .then(result => response.send(result.rows))
-  .catch(console.error);
-})
 
 //local database CRUD
 app.get('/api/v1/users/:user_id', (request, response) => {
@@ -60,6 +51,34 @@ app.get('/api/v1/users/:username', (request, response) => {
     .then(result => response.send(result.rows))
     .catch(console.error);
 });
+
+/////////////////// ** API superagent queries ** ////////////////////
+
+app.get('/api/v1/filters/musclegroup', (req, res) => {
+  let url = 'https://wger.de/api/v2/exercisecategory?language=2&status=2'
+
+  superagent.get(url)
+    .query({'key': WGER_KEY})
+    .then(ret => res.send(ret));
+})
+
+app.get('/api/v1/filters/equipment', (req, res) => {
+  let url = 'https://wger.de/api/v2/equipment?language=2&status=2'
+
+  superagent.get(url)
+    .query({'key': WGER_KEY})
+    .then(ret => res.send(ret));
+})
+
+app.get('/api/v1/exerciselist', (req, res) => {
+  let url = req.body.url;
+
+  superagent.get(url)
+    .query({'key': WGER_KEY})
+    .then(ret => res.send(ret));
+})
+
+/////////////////////// ** Database Manipulation ** //////////////////////
 
 app.post('/api/v1/workout_routine', (request, response) => {
   let {routine_id, monday1, monday2, tuesday1, tuesday2, wednesday1, wednesday2, thursday1, thursday2, friday1, friday2, saturday1, saturday2, sunday1, sunday2} = request.body;
