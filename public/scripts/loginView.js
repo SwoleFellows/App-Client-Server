@@ -31,18 +31,24 @@ var app = app || {};
         username: $('#register-username').val(),
         password: $('#register-password').val()
       };
+      $.post(`${__API_URL__}/api/v1/users`, user);
     })
   }
 
   loginView.verifyUser = function() {
     $('#login-form').on('submit', function(event){
-      username = $('#swolefellow-username').val()
-      password = $('#swolefellow-password').val()
-      if (user[username] && user[password]) {
+      let username = $('#swolefellow-username').val()
+      let password = $('#swolefellow-password').val()
+      $.get(`${__API_URL__}/api/v1/users/${username}`);
+      .then(res => {
+        if (res.password === password) {
+        localStorage.username = username;
+        localStorage.user_id = res.user_id;
         window.location = './search.html'
+        }
       }
       else {
-        
+        console.log('wrong password');
       }
     })
   }

@@ -52,6 +52,14 @@ app.post('/api/v1/users', bodyParser, (request, response) => {
     .catch(console.error);
 });
 
+app.get('/api/v1/users/:username', (request, response) => {
+  client.query(
+    `SELECT * FROM users WHERE username=${request.params.username};`
+  )
+    .then(result => response.send(result.rows))
+    .catch(console.error);
+});
+
 app.post('/api/v1/workout_routine', bodyParser, (request, response) => {
   let {routine_id, monday1, monday2, tuesday1, tuesday2, wednesday1, wednesday2, thursday1, thursday2, friday1, friday2, saturday1, saturday2, sunday1, sunday2} = request.body;
   client.query(
@@ -83,42 +91,43 @@ app.delete('/api/v1/users/:user_id', (request, response) => {
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
 
-// function loadDataBase() {
-//   client.query(`
-//     CREATE TABLE IF NOT EXISTS
-//     users (
-//       user_id SERIAL PRIMARY KEY,
-//       username VARCHAR(12) UNIQUE NOT NULL,
-//       password VARCHAR (16)
-//     );`
-//   )
-//     .then(loadUsers)
-//     .catch(console.error);
-//
-//   client.query(`
-//     CREATE TABLE IF NOT EXISTS
-//     workout_routine (
-//       routine_id SERIAL PRIMARY KEY,
-//       user_id INTEGER NOT NULL REFERENCES user(user_id),
-//       monday1 VARCHAR(255),
-//       monday2 VARCHAR(255),
-//       tuesday1 VARCHAR(255),
-//       tuesday2 VARCHAR(255),
-//       wednesday1 VARCHAR(255),
-//       wednesday2 VARCHAR(255),
-//       thursday1 VARCHAR(255),
-//       thursday2 VARCHAR(255),
-//       friday1 VARCHAR(255),
-//       friday2 VARCHAR(255),
-//       saturday1 VARCHAR(255),
-//       saturday2 VARCHAR(255),
-//       sunday1 VARCHAR(255),
-//       sunday2 VARCHAR(255)
-//     );`
-//   )
-//     .then(loadWorkoutRoutines)
-//     .catch(console.error);
-// }
+function loadDataBase() {
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    users (
+      user_id SERIAL PRIMARY KEY,
+      username VARCHAR(12) UNIQUE NOT NULL,
+      password VARCHAR (16)
+    );`
+  )
+    .catch(console.error);
+
+  client.query(`
+    CREATE TABLE IF NOT EXISTS
+    workout_routine (
+      routine_id SERIAL PRIMARY KEY,
+      user_id INTEGER NOT NULL REFERENCES user(user_id),
+      monday1 VARCHAR(255),
+      monday2 VARCHAR(255),
+      tuesday1 VARCHAR(255),
+      tuesday2 VARCHAR(255),
+      wednesday1 VARCHAR(255),
+      wednesday2 VARCHAR(255),
+      thursday1 VARCHAR(255),
+      thursday2 VARCHAR(255),
+      friday1 VARCHAR(255),
+      friday2 VARCHAR(255),
+      saturday1 VARCHAR(255),
+      saturday2 VARCHAR(255),
+      sunday1 VARCHAR(255),
+      sunday2 VARCHAR(255)
+    );`
+  )
+    .catch(console.error);
+}
+
+loadDataBase();
+
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
 
