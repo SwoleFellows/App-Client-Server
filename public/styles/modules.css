@@ -35,7 +35,7 @@ h1 {
   padding: 10px 10px 10px 230px;
   width: 340px;
   color: white;
-  border-radius: 5px;
+  border-radius: 0px;
   background-color: Transparent;
   background-repeat:no-repeat;
   border: none;
@@ -62,7 +62,7 @@ h1 {
   padding: 10px 10px 10px 255px;
   width: 340px;
   color: white;
-  border-radius: 5px;
+  border-radius: 0px;
   border: none;
   background-color: Transparent;
   background-repeat:no-repeat;
