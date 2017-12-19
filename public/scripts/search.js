@@ -38,6 +38,18 @@ var app = app || {}
     ));
   }
 
+  Search.changePage = url => {
+    let data = {
+      url: url || 'https://wger.de/api/v2/exercise?language=2&status=2'
+    }
+    $.get(`${__API_URL__}/api/v1/exerciselist`, data)
+      .then(res => {
+        Search.loadAll(res);
+        $('#search-results').empty();
+        Search.all.map(v => $('#search-results').append(v.toHtml());
+      })
+  }
+
   module.Search = Search;
 
 })(app)
