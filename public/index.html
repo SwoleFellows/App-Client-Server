@@ -1,35 +1,45 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <meta charset="utf-8">
-    <title>SwoleFellows</title>
-    <link rel="stylesheet" type="text/css" href="styles/reset.css">
-    <link rel="stylesheet" type="text/css" href="styles/base.css">
-    <link rel="stylesheet" type="text/css" href="styles/layout.css">
-    <link rel="stylesheet" type="text/css" href="styles/modules.css">
+    <title>SwoleFellows Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
   </head>
-
   <body>
-
     <header>
-      <img id="logo" src="./images/swole.png" alt="logo">
+      <!-- <img src="placeholder" alt="logo"> -->
       <h1>SwoleFellows</h1>
-      <nav>
-        <ul>
-          <li id="login"><a href="./login.html">Login</a></li>
-          <li id="search"><a href="./search.html">Search</a></li>
-          <li id="routine"><a href="./routine.html">Routine</a></li>
-        </ul>
-      </nav>
     </header>
-
     <main>
+      <button id="login-button">Login</button>
+      <section class="login container">
+        <form id="login-form">
+          <h2>Log into SwoleFellows</h2>
+          <input type="text" name="username" id="swolefellow-username" pattern="[A-Za-z0-9_]{4,12}" placeholder="Username" title="Invalid Username" required>
+          <input type="text" name="password" id="swolefellow-password" pattern="[A-Za-z0-9_]{8,16}" placeholder="password" title="Invalid Password" required>
+          <button id="user-login" type="submit">Log In</button>
+          <button class="cancel">Cancel</button>
+        </form>
+      </section>
 
+      <button id="register-button">Register</button>
+      <section class="register container">
+        <form id="register-form">
+          <h3>Register New User</h3>
+          <input type="text" name="new-username" id="register-username" pattern="[A-Za-z0-9_]{4,12}" placeholder="Username" title="Username must be between 4 and 12 characters using letters, numbers, and underscores." required>
+          <input type="text" name="new-password" id="register-password" pattern="[A-Za-z0-9_]{8,16}" placeholder="password" title="Password must be 8-16 characters using letters, and numbers." required>
+          <button id="user-signup" type="submit">Sign Up</button>
+          <button class="cancel">Cancel<button>
+        </form>
+      </section>
     </main>
 
     <footer>
-      <div>
+      <nav>
         <ul>
           <li><a href="https://www.facebook.com"><img class="icons" src="./icons/fb-icon.png" alt="Link to Facebook"></a></li>
           <li><a href="https://www.twiiter.com"><img class="icons" src="./icons/twit-icon.png" alt="Link to Twitter"></a></li>
@@ -37,16 +47,15 @@
           <li><a href="https://www.slack.com"><img class="icons" src="./icons/slack-icon.png" alt="Link to Slack"></a></li>
           <li><a href="https://www.github.com"><img class="icons" src="./icons/github-icon.png" alt="Link to Github"></a></li>
         </ul>
-      </div>
+      </nav>
       <p>Code 301 - 2017</p>
       <p>Dean - Dan - Richard</p>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <script src="./scripts/server.js"></script>
-    <script src="./scripts/swole.js"></script>
-    <script src="./scripts/swole-view.js"></script>
-
+    <script src="scripts/swole.js"></script>
+    <script src="scripts/swole-view.js"></script>
+    <script src="scripts/loginView.js"></script>
   </body>
+ 
 </html>
