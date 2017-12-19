@@ -18,8 +18,14 @@ var app = app || {}
 
   Search.loadAll = rd => {
     Search.all = rd.results.map(ex => new Search(ex)); //ex(exercise object)) instantiated for each rd(rawData) entry.
-    if (rd.next) $('div[data-api_next]').data('api_next', rd.next);
-    if (rd.prev) $('div[data-api_prev]').data('api_prev', rd.prev);
+    if (rd.next) {
+      $('div[data-api_next]').data('api_next', rd.next);
+      $('div[data-api_next]').on('click', changePage($('div[data-api_next]').data('api_next')));
+    }
+    if (rd.prev) {
+      $('div[data-api_prev]').data('api_prev', rd.prev);
+      $('div[data-api_prev]').on('click', changePage($('div[data-api_prev]').data('api_prev')));
+    }
   };
 
   Search.populateFilter = rdo => {
