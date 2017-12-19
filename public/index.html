@@ -4,11 +4,13 @@
     <meta charset="utf-8">
     <title>SwoleFellows Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
     <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Julius+Sans+One|Niconne|Raleway" rel="stylesheet">
+
   </head>
   <body>
     <header>
@@ -33,18 +35,18 @@
       <section class="register container">
         <form id="register-form">
           <h3>Register New User</h3>
-          <input type="text" name="new-username" id="register-username" pattern="[A-Za-z0-9_]{4,12}" placeholder="Username" title="Username must be between 4 and 12 characters using letters, numbers, and underscores." required>
-          <input type="text" name="new-password" id="register-password" pattern="[A-Za-z0-9_]{8,16}" placeholder="password" title="Password must be 8-16 characters using letters, and numbers." required>
-          <button class="form-btns" id="user-signup" type="submit">Sign Up</button>
-          <button class="cancel form-btns">Cancel</button>
+          <input type="text" id="register-username" pattern="[A-Za-z0-9_]{4,12}" placeholder="Username" title="Username must be between 4 and 12 characters using letters, numbers, and underscores." required>
+          <input type="text" id="register-password" pattern="[A-Za-z0-9_]{8,16}" placeholder="password" title="Password must be 8-16 characters using letters, and numbers." required>
+          <button id="user-signup" type="submit">Sign Up</button>
+          <button class="cancel">Cancel<button>
         </form>
       </section>
     </main>
 
     <footer>
       <!-- <h6>Code 301 - 2017</h6>
-      <h6>Dean - Dan - Richard</h6> -->
-      <!-- <nav id="social-links">
+      <h6>Dean - Dan - Richard</h6>
+      <nav id="social-links">
         <ul>
           <li><a href="https://www.facebook.com"><img class="icons" src="./icons/fb-icon.png" alt="Link to Facebook"></a></li>
           <li><a href="https://www.twiiter.com"><img class="icons" src="./icons/twit-icon.png" alt="Link to Twitter"></a></li>
@@ -57,9 +59,9 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <script src="scripts/swole.js"></script>
-    <script src="scripts/swole-view.js"></script>
-    <script src="scripts/loginView.js"></script>
+    <script src="./scripts/swole.js"></script>
+    <script src="./scripts/swole-view.js"></script>
+    <script src="./scripts/loginView.js"></script>
   </body>
 
 </html>
