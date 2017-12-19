@@ -5,18 +5,19 @@ var app = app || {};
 (function (module) {
   const loginView = {};
 
-  loginView.resetView = function() {
-    $('.container').hide();
-  }
-
   loginView.loginForm = function() {
-    $('#login-button').click(function(){
-      event.preventDefault();
-      loginView.resetView();
+    $('#login-button').click(function() {
       $('.login').show();
+      console.log('why isnt this working')
     })
   };
 
+  loginView.registerForm = function() {
+    $('#register-button').click(function() {
+      $('.register').show();
+      console.log('please god work')
+    })
+  }
 
   module.loginView=loginView;
 })(app)
