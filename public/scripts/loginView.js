@@ -7,6 +7,9 @@ var app = app || {};
 
   loginView.loginForm = function() {
     $('#login-button').click(function() {
+
+      $('.register').hide();
+
       $('.login').show();
       console.log('why isnt this working')
     })
@@ -14,6 +17,9 @@ var app = app || {};
 
   loginView.registerForm = function() {
     $('#register-button').click(function() {
+
+      $('.login').hide();
+
       $('.register').show();
       console.log('please god work')
     })
@@ -21,3 +27,6 @@ var app = app || {};
 
   module.loginView=loginView;
 })(app)
+
+app.loginView.loginForm();
+app.loginView.registerForm();
