@@ -21,6 +21,28 @@ var app = app || {};
     })
   }
 
+  loginView.registerUser = function() {
+    $('#register-form').on('submit', function(event){
+      let user = {
+        username: $('#register-username').val(),
+        password: $('#register-password').val()
+      };
+    })
+  }
+
+  loginView.verifyUser = function() {
+    $('#login-form').on('submit', function(event){
+      username = $('#swolefellow-username').val()
+      password = $('#swolefellow-password').val()
+      if (user[username] && user[password]) {
+        window.location = './search.html'
+      }
+      else {
+        
+      }
+    })
+  }
+
   module.loginView=loginView;
 })(app)
 
