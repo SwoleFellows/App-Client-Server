@@ -1,0 +1,8 @@
+header, main, div, footer, section {
+  outline: 1px black dashed;
+}
+
+@media (min-width: 360px) and (orientation: letter) {
+
+}
+

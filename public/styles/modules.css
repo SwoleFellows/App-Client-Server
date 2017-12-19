@@ -1,0 +1,13 @@
+
+.register, .login {
+  display: none;
+}
+
+header {
+  background-color: black;
+  height: 100px;
+}
+
+#logo {
+  width: 100px;
+}

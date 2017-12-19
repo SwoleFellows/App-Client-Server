@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercise Search</title>
+    <script id="results-template" type="text/x-handlebars-template">
+      <div data-exerciseId={{exerciseId}} class="workout-result">
+        <h1>{{name}}</h1>
+        <div class="description">
+          {{{description}}}
+        </div>
+        <img src={{image_url}}>
+      </div>
+    </script>
+    <script id="filter-template" type="text/x-handlebars-template">
+      <option value={{id}}>{{name}}</option>
+    </script>
+  </head>
+  <body>
+    <select id="musclegroup"></select>
+    <select id="equipment"></select>
+    <div id="search-results"></div>
+    <div data-api_prev="">Prev</div>
+    <div data-api_next="">Next</div>
+  </body>
+</html>
