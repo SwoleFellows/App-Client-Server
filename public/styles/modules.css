@@ -1,4 +1,16 @@
 
+#logo {
+  display: block;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.icons {
+  display: block;
+  float: left;
+  width: 40px;
+  margin-left: 5px;
+}
 .register, .login {
   display: none;
 }
