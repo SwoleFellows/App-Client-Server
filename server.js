@@ -25,7 +25,8 @@ app.get('/routine', (request, response) =>
 app.get('/search', (request, response) =>
   response.sendFile('search.html', {root: './public'}));
 
-//local database CRUD
+///////////////// local database CRUD ////////////////////
+
 app.get('/api/v1/users/:user_id', (request, response) => {
   client.query(
     `SELECT * FROM users INNER JOIN workout_routine ON user.user_id=routine_id WHERE user_id=${request.params.user_id};`
@@ -40,6 +41,15 @@ app.post('/api/v1/users', (request, response) => {
     `INSERT INTO users(username, password) VALUES($1, $2)`,
     [request.body.username, request.body.password]
   )
+    .then(
+      client.query(`
+        SELECT user_id FROM users WHERE username=$1;`, [request.body.username])
+    )
+    .then(id => {
+      client.query(`
+        INSERT INTO workout_routine(user_id, monday1, monday2, tuesday1, tuesday2, wednesday1, wednesday2, thursday1, thursday2, friday1, friday2, saturday1, saturday2, sunday1, sunday2) VALUES($1, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2)
+        `, [id, -1])
+    })
     .then(() => response.sendStatus(201))
     .catch(console.error);
 });
@@ -52,7 +62,16 @@ app.get('/api/v1/users/:username', (request, response) => {
     .catch(console.error);
 });
 
-/////////////////// ** API superagent queries ** ////////////////////
+app.put('/api/v1/save', (req, res) => {
+  let {id, column, user_id} = req.body, changes= `${column}=${id}`;
+  client.query(`
+    UPDATE workout_routine SET $1 WHERE user_id=2;
+    `, [changes, user_id])
+    .then(() => res.send('Update Complete'))
+    .catch(console.error);
+})
+
+////////////// ** API superagent queries ** /////////////////
 
 app.get('/api/v1/filters/category', (req, res) => {
   let url = 'https://wger.de/api/v2/exercisecategory?language=2&status=2'
@@ -77,7 +96,7 @@ app.get('/api/v1/exerciselist', (req, res) => {
     .then(ret => res.send(ret.text));
 })
 
-/////////////////////// ** Database Manipulation ** //////////////////////
+/////////////////// ** Unused ** //////////////////
 
 app.post('/api/v1/workout_routine', (request, response) => {
   let {routine_id, monday1, monday2, tuesday1, tuesday2, wednesday1, wednesday2, thursday1, thursday2, friday1, friday2, saturday1, saturday2, sunday1, sunday2} = request.body;
@@ -88,6 +107,7 @@ app.post('/api/v1/workout_routine', (request, response) => {
     .then(() => response.sendStatus(201))
     .catch(console.error);
 });
+
 
 app.put('/api/v1/users/:user_id', (request, response) => {
   let {routine_id, monday1, monday2, tuesday1, tuesday2, wednesday1, wednesday2, thursday1, thursday2, friday1, friday2, saturday1, saturday2, sunday1, sunday2} = request.body;
