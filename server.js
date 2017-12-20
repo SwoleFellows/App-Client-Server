@@ -59,7 +59,7 @@ app.get('/api/v1/filters/musclegroup', (req, res) => {
 
   superagent.get(url)
     .query({'key': WGER_KEY})
-    .then(ret => res.send(ret));
+    .then(ret => res.send(ret.text));
 })
 
 app.get('/api/v1/filters/equipment', (req, res) => {
@@ -67,7 +67,7 @@ app.get('/api/v1/filters/equipment', (req, res) => {
 
   superagent.get(url)
     .query({'key': WGER_KEY})
-    .then(ret => res.send(ret));
+    .then(ret => res.send(ret.text));
 })
 
 app.get('/api/v1/exerciselist', (req, res) => {
@@ -75,7 +75,7 @@ app.get('/api/v1/exerciselist', (req, res) => {
 
   superagent.get(url)
     .query({'key': WGER_KEY})
-    .then(ret => res.send(ret));
+    .then(ret => res.send(ret.text));
 })
 
 /////////////////////// ** Database Manipulation ** //////////////////////
