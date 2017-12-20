@@ -12,3 +12,7 @@
   -moz-border-radius: 6px;
   border-radius: 6px;
 }
+
+.workout-result h2, #save-result h2 {
+  font-size: 18px;
+}
