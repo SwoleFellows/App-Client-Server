@@ -2,12 +2,12 @@
 
 var app = app || {};
 
-(function (module) {
-  const detail = {};
+if({{username}}){
+  $('#login').text(`${this.username} logged in`);
+};
 
-  let __API_URL__ = "http://localhost:3000"
 
-  detail.detailPage = function () {
-    $('').hide();
+api/v1/save
 
-  };
+
+$.get('#search-results')

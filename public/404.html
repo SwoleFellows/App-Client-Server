@@ -8,17 +8,19 @@
     <link rel="stylesheet" href="styles/404.css">
   </head>
   <body>
-    <img id="fourohfour" src="./images/404.png" alt="404 Page Not Found">
-    <p>Sorry, Getting Swole. Page Not Found.</p>
-    <div>
-      <p class="error-page" id="darknet">Contacting Krieg...</p>
-      <p class="error-page" id="mesh">POUNDS OF FLESH!</p>
-      <p class="error-page" id="fcc">My Pecs Have Pecs!</p>
-      <p class="error-page" id="phonebook">I see Meat Muscles!</p>
-      <p class="error-page" id="imagination">Rerouting to Home Page...</p>
-    </div>
+    <section id="background">
+      <img id="fourohfour" src="./images/404.png" alt="404 Page Not Found">
+      <p>Sorry, Getting Swole. Page Not Found.</p>
+      <div>
+        <p class="error-page" id="darknet">Contacting Krieg...</p>
+        <p class="error-page" id="mesh">"POUNDS OF FLESH!"</p>
+        <p class="error-page" id="fcc">"My Pecs Have Pecs!"</p>
+        <p class="error-page" id="phonebook">"I see Meat Muscles!"</p>
+        <p class="error-page" id="imagination">Rerouting to Search Page...</p>
+      </div>
 
-    <img id="loading" src="./images/loading.gif">
+      <img id="loading" src="./images/loading.gif">
+    </section>
 
     <footer>
       <p>SwoleFellows - 2017</p>
@@ -27,15 +29,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
     $(document).ready(function() {
-      $('.error-page').hide();
-      $('#darknet').show(100).delay(4000).hide(0);
-      $('#loading').show(100);
-      $('#mesh').delay(5000).show(0).delay(2000).hide(0);
-      $('#fcc').delay(8000).show(0).delay(4000).hide(0);
-      $('#phonebook').delay(12500).show(0).delay(4000).hide(0);
-      $('#imagination').delay(17000).show(0);
-      $('#loading').delay(16500).hide(0);
-      $.delay(18000).get('/');
+      if ($(window).width() <= 480) {
+        $('.error-page').hide();
+        $('#darknet').show(100).delay(4000).hide(0);
+        $('#loading').show(100);
+        $('#mesh').delay(5000).show(0).delay(2000).hide(0);
+        $('#fcc').delay(8000).show(0).delay(4000).hide(0);
+        $('#phonebook').delay(12500).show(0).delay(4000).hide(0);
+        $('#imagination').delay(17000).show(0);
+        $('#loading').delay(16500).hide(0);
+        $.delay(18000).get('/search');
+      } else {
+        $('#loading').hide();
+        $('.error-page').hide();
+        $('#imagination').show(0).delay(4000).get('/search');
+      }
     });
     </script>
   </body>

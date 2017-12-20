@@ -24,6 +24,8 @@ app.get('/routine', (request, response) =>
   response.sendFile('routine.html', {root: './public'}));
 app.get('/search', (request, response) =>
   response.sendFile('search.html', {root: './public'}));
+app.get('/404', (request, response) =>
+  response.sendFile('404.html', {root: './public'}));
 
 //local database CRUD
 app.get('/api/v1/users/:user_id', (request, response) => {
@@ -76,6 +78,10 @@ app.get('/api/v1/exerciselist', (req, res) => {
   superagent.get(url)
     .query({'key': WGER_KEY})
     .then(ret => res.send(ret.text));
+})
+
+app.get('/api/v1/save', request, response => {
+  
 })
 
 /////////////////////// ** Database Manipulation ** //////////////////////

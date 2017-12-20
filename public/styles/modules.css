@@ -55,7 +55,7 @@ h2 {
   transition: 750ms;
 }
 
-#login-button:hover {
+#login-button:focus {
   display: block;
   padding: 10px 10px 10px 230px;
   width: 340px;
@@ -83,7 +83,7 @@ h2 {
   transition: 750ms;
 }
 
-#register-button:hover{
+#register-button:focus {
   display: block;
   padding: 10px 10px 10px 255px;
   width: 340px;
