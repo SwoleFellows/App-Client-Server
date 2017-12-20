@@ -4,6 +4,7 @@ font-family: 'Great Vibes', cursive;
 font-family: 'Julius Sans One', sans-serif;
 font-family: 'Niconne', cursive;
 */
+
 body {
   background-image: url("../images/background1.png");
   background-color: #000;
@@ -20,6 +21,14 @@ h1 {
   font-size: 30px;
   color: white;
   text-align: center;
+}
+
+/* Form I.D. */
+h2 {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  margin-left: 28px;
+  margin-bottom: 5px;
 }
 
 /* A Spacer between SwoleFellows Header and Forms */
@@ -126,15 +135,8 @@ h1 {
   outline: none;
 }
 
-@media only screen and (min-width: 360px) {
+@media only screen and (min-width: 480px) {
 
-  body {
-    background-image: url("../images/background1.jpg");
-    background-color: #000;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-  }
 }
 
 .register_success {

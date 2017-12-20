@@ -154,4 +154,4 @@ function createWorkoutTable () {
 // export PORT=3000
 // export CLIENT_URL=http://localhost:8080
 // export DATABASE_URL=postgres://localhost:5432/books_app
-// export DATABASE_URL=postgres://postgres:plokij09@localhost:5432/books_app
+// export DATABASE_URL=postgres://postgres:plokij09@localhost:5432/swolefellows
