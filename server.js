@@ -54,7 +54,7 @@ app.get('/api/v1/users/:username', (request, response) => {
 
 /////////////////// ** API superagent queries ** ////////////////////
 
-app.get('/api/v1/filters/musclegroup', (req, res) => {
+app.get('/api/v1/filters/category', (req, res) => {
   let url = 'https://wger.de/api/v2/exercisecategory?language=2&status=2'
 
   superagent.get(url)
@@ -71,8 +71,7 @@ app.get('/api/v1/filters/equipment', (req, res) => {
 })
 
 app.get('/api/v1/exerciselist', (req, res) => {
-  let url = req.body.url;
-
+  let url = req.query.list;
   superagent.get(url)
     .query({'key': WGER_KEY})
     .then(ret => res.send(ret.text));
