@@ -31,13 +31,18 @@ var app = app || {};
       };
       console.log(user);
       $.post(`${__API_URL__}/api/v1/users`, user)
-      .then($('#register-form')[0].reset())
-      .then($('.register_success').show())
-      .then($('.register').fadeOut(2000))
-      .then($('.login').fadeIn(3000))
-      .catch(console.error);
+        .then($.get(`${__API_URL__}/api/v1/users/login/${$('#register-username').val()}`)
+          .then(res => {
+            $.post(`${__API_URL__}/api/v1/routine`, {id: res[0].user_id})
+          })
+        )
+        .then($('#register-form')[0].reset())
+        .then($('.register_success').show())
+        .then($('.register').fadeOut(2000))
+        .then($('.login').delay(2100).fadeIn(3000))
+        .catch(console.error);
     })
-  }
+  };
 
   loginView.grabInfo = function() {
     $('#login-form').on('submit', function(event){
@@ -53,26 +58,26 @@ var app = app || {};
   }
 
   loginView.verifyUser = function(username, password) {
-  $.get(`${__API_URL__}/api/v1/users/login/${username}`)
-  .then(res => {
-    console.log(res)
-    if (res.length < 1) {
-      $('.invalid_info').fadeIn(250);
-    } else{
-      if (res[0].password === password) {
-        localStorage.username = username;
-        console.log('local storage username', localStorage.username)
-        localStorage.user_id = res[0].user_id;
-        console.log('local storage user id', localStorage.user_id)
-        window.location = '/search'
-      } else {
-        if (res[0].password !== password) {
+    $.get(`${__API_URL__}/api/v1/users/login/${username}`)
+      .then(res => {
+        console.log(res)
+        if (res.length < 1) {
           $('.invalid_info').fadeIn(250);
+        } else{
+          if (res[0].password === password) {
+            localStorage.username = username;
+            console.log('local storage username', localStorage.username)
+            localStorage.user_id = res[0].user_id;
+            console.log('local storage user id', localStorage.user_id)
+            window.location = '/search'
+          } else {
+            if (res[0].password !== password) {
+              $('.invalid_info').fadeIn(250);
+            }
+          }
         }
-      }
-    }
-  })
-  .catch(console.error)
+      })
+      .catch(console.error)
 }
 
   module.loginView=loginView;
