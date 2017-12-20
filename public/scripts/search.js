@@ -1,8 +1,11 @@
 'use strict';
 
-var app = app || {}
+var app = app || {};
+
 
 (function (module) {
+
+  let __API_URL__ = 'http://localhost:3000'
 
   const Search = function (rdo) { //rdo: rawDataObj
     Object.keys(rdo).forEach(key => this[key] = rdo[key]);
@@ -52,11 +55,11 @@ var app = app || {}
       .then(res => {
         Search.loadAll(res);
         $('#search-results').empty();
-        Search.all.map(v => $('#search-results').append(v.toHtml());
+        Search.all.map(v => $('#search-results').append(v.toHtml()));
       })
   }
 
-  module.Search = Search;
+  module.search = Search;
 
 })(app)
 

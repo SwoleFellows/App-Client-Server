@@ -9,19 +9,26 @@ var app = app || {};
 
   loginView.loginForm = function() {
     $('#login-button').click(function() {
+
       $('.register').hide();
-      $('.login').fadeIn(750);
+
+      $('.login').show();
+      console.log('why isnt this working')
     })
   };
 
   loginView.registerForm = function() {
     $('#register-button').click(function() {
+
       $('.login').hide();
-      $('.register').fadeIn(750);
+
+      $('.register').show();
+      console.log('please god work')
     })
   }
 
   loginView.registerUser = function() {
+    $('.register_success').hide();
     $('#register-form').on('submit', function(event){
       event.preventDefault();
       let user = {
@@ -48,7 +55,7 @@ var app = app || {};
         if (res.password === password) {
         localStorage.username = username;
         localStorage.user_id = res.user_id;
-        $.sendfile('/search')
+        $.get(`${__API_URL__}/api/v1/users/select`)
         } else {
         console.log('wrong password');
       }
@@ -62,3 +69,4 @@ var app = app || {};
 app.loginView.loginForm();
 app.loginView.registerForm();
 app.loginView.registerUser();
+app.loginView.verifyUser();
