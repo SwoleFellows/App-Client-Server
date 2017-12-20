@@ -1,0 +1,67 @@
+/* font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Cinzel', serif;
+font-family: 'Josefin Slab', serif; */
+
+body {
+  background-color: white;
+}
+
+header {
+  height: 100px;
+  background-color: #333300;
+}
+
+#logo {
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  width: 70px;
+  margin-bottom: -10px;
+}
+
+h1 {
+  display: block;
+  float: left;
+  margin-top: 35px;
+  margin-left: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 30px;
+  color: white;
+}
+
+#login {
+  clear: both;
+  display: block;
+  color: white;
+  font-family: 'Josefin Slab', serif;
+  margin-left: 20px;
+}
+
+
+.icons {
+  display: block;
+  float: left;
+  width: 30px;
+}
+
+footer p {
+  clear:both;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: 480px) {
+
+  body {
+    background-image: url("../images/newbackground.png");
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+  }
+}

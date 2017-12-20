@@ -24,6 +24,8 @@ app.get('/routine', (request, response) =>
   response.sendFile('routine.html', {root: './public'}));
 app.get('/search', (request, response) =>
   response.sendFile('search.html', {root: './public'}));
+app.get('/404', (request, response) =>
+  response.sendFile('404.html', {root: './public'}));
 
 ///////////////// local database CRUD ////////////////////
 
@@ -97,7 +99,10 @@ app.get('/api/v1/exerciselist', (req, res) => {
     .then(ret => res.send(ret.text));
 })
 
+/////////////////////// ** Database Manipulation ** //////////////////////
+
 /////////////////// ** Unused ** //////////////////
+
 
 app.post('/api/v1/workout_routine', (request, response) => {
   let {routine_id, monday1, monday2, tuesday1, tuesday2, wednesday1, wednesday2, thursday1, thursday2, friday1, friday2, saturday1, saturday2, sunday1, sunday2} = request.body;
