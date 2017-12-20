@@ -28,7 +28,7 @@ var app = app || {};
         username: $('#register-username').val(),
         password: $('#register-password').val()
       };
-      console.log(user);
+      console.log('user:', user);
       $.post(`${__API_URL__}/api/v1/users`, user)
       .then($.get('/search'))
       .catch(console.error);
