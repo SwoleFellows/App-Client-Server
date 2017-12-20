@@ -41,18 +41,19 @@ app.post('/api/v1/users', (request, response) => {
     `INSERT INTO users(username, password) VALUES($1, $2)`,
     [request.body.username, request.body.password]
   )
-    .then(
-      client.query(`
-        SELECT user_id FROM users WHERE username=$1;`, [request.body.username])
-    )
-    .then(id => {
-      client.query(`
-        INSERT INTO workout_routine(user_id, monday1, monday2, tuesday1, tuesday2, wednesday1, wednesday2, thursday1, thursday2, friday1, friday2, saturday1, saturday2, sunday1, sunday2) VALUES($1, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2)
-        `, [id, -1])
-    })
     .then(() => response.sendStatus(201))
     .catch(console.error);
 });
+
+app.post('/api/v1/routine', (req, res) => {
+  let id = req.body.id
+  client.query(`
+    INSERT INTO workout_routine(user_id, monday1, monday2, tuesday1, tuesday2, wednesday1, wednesday2, thursday1, thursday2, friday1, friday2, saturday1, saturday2, sunday1, sunday2) VALUES($1, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2, $2)
+    `, [id, -1])
+    .then(() => res.sendStatus(201))
+    .catch(console.error)
+});
+
 
 app.get('/api/v1/users/login/:username', (request, response) => {
   client.query(
@@ -66,8 +67,8 @@ app.get('/api/v1/users/login/:username', (request, response) => {
 app.put('/api/v1/save', (req, res) => {
   let {id, column, user_id} = req.body, changes= `${column}=${id}`;
   client.query(`
-    UPDATE workout_routine SET $1 WHERE user_id=2;
-    `, [changes, user_id])
+    UPDATE workout_routine SET ${changes} WHERE user_id=$1;
+    `, [user_id])
     .then(() => res.send('Update Complete'))
     .catch(console.error);
 })

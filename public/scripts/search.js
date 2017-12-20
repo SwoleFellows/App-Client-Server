@@ -106,14 +106,14 @@ var app = app || {};
             let routine = {
               id: e.target.parentElement.dataset.exerciseid,
               column: `${e.target[0].value}${time}`,
-              user_id: localStorage.user_id
+              user_id: parseInt(localStorage.user_id)
             }
             $.ajax({
               url: `${__API_URL__}/api/v1/save`,
               method: 'PUT',
               data: routine
             })
-              .then(Search.changePage)
+              .then(() => Search.changePage())
           })
           Search.toggleVis(true, true)
         }
