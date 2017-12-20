@@ -54,7 +54,7 @@ app.get('/api/v1/users/:username', (request, response) => {
 
 /////////////////// ** API superagent queries ** ////////////////////
 
-app.get('/api/v1/filters/musclegroup', (req, res) => {
+app.get('/api/v1/filters/category', (req, res) => {
   let url = 'https://wger.de/api/v2/exercisecategory?language=2&status=2'
 
   superagent.get(url)

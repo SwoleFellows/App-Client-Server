@@ -34,20 +34,28 @@ var app = app || {};
 
   Search.populateFilter = rdo => {
     let filterTemplate = Handlebars.compile($('#filter-template').text());
-    $('#equipment').empty().append(filterTemplate({value: '', name: 'Choose equipment type...'}));
-    $('#musclegroup').empty().append(filterTemplate({value: '', name: 'Choose muscle group...'}));
+    $('#equipment').empty().append(filterTemplate({value: null, name: 'Choose equipment type...'}));
+    $('#category').empty().append(filterTemplate({value: null, name: 'Choose muscle group...'}));
     $.get(`${__API_URL__}/api/v1/filters/equipment`)
       .then(res => JSON.parse(res))
       .then(res => res.results.map((val) => {
         $('#equipment').append(filterTemplate(val));
       }
     ));
-    $.get(`${__API_URL__}/api/v1/filters/musclegroup`)
+    $.get(`${__API_URL__}/api/v1/filters/category`)
       .then(res => JSON.parse(res))
       .then(res => res.results.map((val) => {
-        $('#musclegroup').append(filterTemplate(val));
+        $('#category').append(filterTemplate(val));
       }
     ));
+    $('select').on('change', function (e) {
+      e.target.id === 'equipment'? $('#category').val('') : $('#equipment').val('')
+      if (!e.target.value) Search.changePage()
+      else {
+      console.log(e.target.id, e.target.value)
+      Search.changePage({target: {value:`https://wger.de/api/v2/exercise?language=2&status=2&${e.target.id}=${e.target.value}`}})
+    }
+    })
   }
 
   Search.changePage = url => {
@@ -65,6 +73,7 @@ var app = app || {};
 
 })(app)
 
+app.search.populateFilter();
 app.search.changePage();
 
 
