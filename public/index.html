@@ -26,11 +26,13 @@
         <form id="login-form">
           <h2>Log into SwoleFellows</h2>
           <input type="text" name="username" id="swolefellow-username" pattern="[A-Za-z0-9_]{4,12}" placeholder="Username" title="Invalid Username" required>
-          <input type="text" name="password" id="swolefellow-password" pattern="[A-Za-z0-9_]{8,16}" placeholder="password" title="Invalid Password" required>
+          <input type="password" name="password" id="swolefellow-password" pattern="[A-Za-z0-9_]{8,16}" placeholder="password" title="Invalid Password" required>
           <button class="form-btns" id="user-login" type="submit">Log In</button>
           <button class="cancel form-btns">Cancel</button>
         </form>
-
+        <div class="invalid_info">
+          <p>Username or Password are incorrect.</p>
+        </div>
       </section>
 
       <section class="register container">
@@ -66,7 +68,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
-    <script src="./scripts/swole.js"></script>
+    <!-- <script src="./scripts/swole.js"></script> -->
     <script src="./scripts/swole-view.js"></script>
     <script src="./scripts/loginView.js"></script>
     <script src="./scripts/search.js"></script>

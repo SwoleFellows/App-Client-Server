@@ -9,21 +9,15 @@ var app = app || {};
 
   loginView.loginForm = function() {
     $('#login-button').click(function() {
-
       $('.register').hide();
-
       $('.login').show();
-      console.log('why isnt this working')
     })
   };
 
   loginView.registerForm = function() {
     $('#register-button').click(function() {
-
       $('.login').hide();
-
       $('.register').show();
-      console.log('please god work')
     })
   }
 
@@ -35,7 +29,7 @@ var app = app || {};
         username: $('#register-username').val(),
         password: $('#register-password').val()
       };
-      console.log('user:', user);
+      console.log(user);
       $.post(`${__API_URL__}/api/v1/users`, user)
       .then($('#register-form')[0].reset())
       .then($('.register_success').show())
@@ -45,23 +39,41 @@ var app = app || {};
     })
   }
 
-  loginView.verifyUser = function() {
+  loginView.grabInfo = function() {
     $('#login-form').on('submit', function(event){
+      console.log('verify is clicked')
       event.preventDefault();
       let username = $('#swolefellow-username').val()
+      console.log('username:', username)
       let password = $('#swolefellow-password').val()
-      $.get(`${__API_URL__}/api/v1/users/${username}`)
-      .then(res => {
-        if (res.password === password) {
-        localStorage.username = username;
-        localStorage.user_id = res.user_id;
-        $.get(`${__API_URL__}/api/v1/users/select`)
-        } else {
-        console.log('wrong password');
-      }
-    })
+      console.log('password:', password)
+      console.log(event)
+      loginView.verifyUser(username, password);
     })
   }
+
+  loginView.verifyUser = function(username, password) {
+  $.get(`${__API_URL__}/api/v1/users/login/${username}`)
+  .then(res => {
+    console.log(res)
+    if (res.length < 1) {
+      $('.invalid_info').fadeIn(250);
+    } else{
+      if (res[0].password === password) {
+        localStorage.username = username;
+        console.log('local storage username', localStorage.username)
+        localStorage.user_id = res[0].user_id;
+        console.log('local storage user id', localStorage.user_id)
+        window.location = '/search'
+      } else {
+        if (res[0].password !== password) {
+          $('.invalid_info').fadeIn(250);
+        }
+      }
+    }
+  })
+  .catch(console.error)
+}
 
   module.loginView=loginView;
 })(app)
@@ -69,4 +81,4 @@ var app = app || {};
 app.loginView.loginForm();
 app.loginView.registerForm();
 app.loginView.registerUser();
-app.loginView.verifyUser();
+app.loginView.grabInfo();
