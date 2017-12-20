@@ -36,11 +36,13 @@ var app = app || {};
     $('#equipment').empty().append(filterTemplate({value: '', name: 'Choose equipment type...'}));
     $('#musclegroup').empty().append(filterTemplate({value: '', name: 'Choose muscle group...'}));
     $.get(`${__API_URL__}/api/v1/filters/equipment`)
+      .then(res => JSON.parse(res))
       .then(res => res.results.map((val) => {
         $('#equipment').append(filterTemplate(val));
       }
     ));
     $.get(`${__API_URL__}/api/v1/filters/musclegroup`)
+      .then(res => JSON.parse(res))
       .then(res => res.results.map((val) => {
         $('#musclegroup').append(filterTemplate(val));
       }
