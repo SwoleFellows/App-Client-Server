@@ -23,11 +23,11 @@ var app = app || {};
     Search.all = rd.results.map(ex => new Search(ex)); //ex(exercise object)) instantiated for each rd(rawData) entry.
     if (rd.next) {
       $('div[data-api_next]').data('api_next', rd.next);
-      $('div[data-api_next]').on('click', changePage($('div[data-api_next]').data('api_next')));
+      $('div[data-api_next]').on('click', Search.changePage($('div[data-api_next]').data('api_next')));
     }
     if (rd.prev) {
       $('div[data-api_prev]').data('api_prev', rd.prev);
-      $('div[data-api_prev]').on('click', changePage($('div[data-api_prev]').data('api_prev')));
+      $('div[data-api_prev]').on('click', Search.changePage($('div[data-api_prev]').data('api_prev')));
     }
   };
 
@@ -50,12 +50,11 @@ var app = app || {};
   }
 
   Search.changePage = url => {
-    let data = {
-      url: url || 'https://wger.de/api/v2/exercise?language=2&status=2'
-    }
+    let data = {list: url || 'https://wger.de/api/v2/exercise?language=2&status=2'}
+    // console.log(data);
     $.get(`${__API_URL__}/api/v1/exerciselist`, data)
       .then(res => {
-        Search.loadAll(res);
+        Search.loadAll(JSON.parse(res));
         $('#search-results').empty();
         Search.all.map(v => $('#search-results').append(v.toHtml()));
       })

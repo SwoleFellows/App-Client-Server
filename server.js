@@ -71,8 +71,7 @@ app.get('/api/v1/filters/equipment', (req, res) => {
 })
 
 app.get('/api/v1/exerciselist', (req, res) => {
-  let url = req.body.url;
-
+  let url = req.query.list;
   superagent.get(url)
     .query({'key': WGER_KEY})
     .then(ret => res.send(ret.text));
