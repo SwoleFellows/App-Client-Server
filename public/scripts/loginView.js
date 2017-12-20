@@ -29,7 +29,7 @@ var app = app || {};
         username: $('#register-username').val(),
         password: $('#register-password').val()
       };
-      console.log('user:', user);
+      console.log(user);
       $.post(`${__API_URL__}/api/v1/users`, user)
       .then($('#register-form')[0].reset())
       .then($('.register_success').show())
@@ -53,22 +53,27 @@ var app = app || {};
   }
 
   loginView.verifyUser = function(username, password) {
-    $.get(`${__API_URL__}/api/v1/users/login/${username}`)
-    .then(res => {
-      console.log(res)
-      console.log('res password', res[0].password)
+  $.get(`${__API_URL__}/api/v1/users/login/${username}`)
+  .then(res => {
+    console.log(res)
+    if (res.length < 1) {
+      $('.invalid_info').fadeIn(250);
+    } else{
       if (res[0].password === password) {
-      localStorage.username = username;
-      console.log('local storage username', localStorage.username)
-      localStorage.user_id = res[0].user_id;
-      console.log('local storage user id', localStorage.user_id)
-      // $.get(`${__API_URL__}/api/v1/users/select`)
-      window.location = '/search'
+        localStorage.username = username;
+        console.log('local storage username', localStorage.username)
+        localStorage.user_id = res[0].user_id;
+        console.log('local storage user id', localStorage.user_id)
+        window.location = '/search'
       } else {
-      console.log('wrong password');
+        if (res[0].password !== password) {
+          $('.invalid_info').fadeIn(250);
+        }
       }
-    })
-  }
+    }
+  })
+  .catch(console.error)
+}
 
   module.loginView=loginView;
 })(app)
