@@ -44,9 +44,10 @@ app.post('/api/v1/users', (request, response) => {
     .catch(console.error);
 });
 
-app.get('/api/v1/users/:username', (request, response) => {
+app.get('/api/v1/users/login/:username', (request, response) => {
   client.query(
-    `SELECT * FROM users WHERE username=${request.params.username};`
+    `SELECT * FROM users WHERE username=$1;`,
+    [request.params.username]
   )
     .then(result => response.send(result.rows))
     .catch(console.error);
