@@ -21,6 +21,7 @@ $('#nav-routine').hide();
       // let workout = ()
       .then(res => workoutObj = new Exercise(res[0]))
       .then(() => {
+
         Object.keys(workoutObj).forEach(key => {
           $('#saved_workouts').append(`<section id="${key}"></section>`)
           let day = `${key.slice(0, -1)} Exercise ${key.slice(-1)}`
@@ -38,6 +39,7 @@ $('#nav-routine').hide();
               })
           }
         })
+
       })
       .then(() => $('#saved_workouts').delay(2500).fadeIn(1000))
   }
