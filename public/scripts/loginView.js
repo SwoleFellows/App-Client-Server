@@ -1,5 +1,7 @@
 'use strict';
 
+localStorage.clear();
+
 var app = app || {};
 
 (function (module) {
