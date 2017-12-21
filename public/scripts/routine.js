@@ -2,6 +2,8 @@
 
 var app = app || {};
 
+$('#nav-routine').hide();
+
 (function (module) {
 
   let __API_URL__ = 'http://localhost:3000';

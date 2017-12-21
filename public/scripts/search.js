@@ -2,6 +2,7 @@
 
 var app = app || {};
 
+$('#nav-search').hide();
 
 (function (module) {
 
