@@ -37,6 +37,15 @@ app.get('/api/v1/users/:user_id', (request, response) => {
     .catch(console.error);
 });
 
+app.get('/api/v1/routine/:id', (request, response) => {
+  client.query(
+    `SELECT * FROM workout_routine WHERE user_id=$1;`,
+    [request.params.id]
+  )
+  .then(result => response.send(result.rows))
+  .catch(console.error);
+});
+
 app.post('/api/v1/users', (request, response) => {
   console.log('adding new')
   client.query(
