@@ -36,9 +36,9 @@ $('#nav-routine').hide();
                 })
             }
           })
-          return exercises
+          .then(return exercises)
           })
-      .done((arr) => {
+      .then((arr) => {
         $('#saved_workouts').empty();
         Exercise.loadAll(arr);
         Exercise.all.map(obj => obj.toHtml());

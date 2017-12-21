@@ -1,34 +1,39 @@
-/* font-family: 'Open Sans Condensed', sans-serif;
+/*
+font-family: 'Open Sans Condensed', sans-serif;
 font-family: 'Cinzel', serif;
-font-family: 'Josefin Slab', serif; */
+font-family: 'Josefin Slab', serif;
+*/
 
 body {
-  background-color: white;
-}
-
-header {
-  height: 100px;
-  background-color: #333300;
-}
-
-#logo {
-  float: right;
-  margin-right: 10px;
-  margin-top: 10px;
-  width: 70px;
-  margin-bottom: -10px;
+  background-image: url("../images/femalebodybuilding1.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 h1 {
   display: block;
   float: left;
-  margin-top: 35px;
+  margin-top: 10px;
   margin-left: 10px;
   font-family: 'Cinzel', serif;
   font-size: 30px;
-  color: white;
+  color: #ebf2f9;
 }
 
+header ul li {
+  clear: both;
+  display: block;
+  float: right;
+  margin-bottom: 10px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+/*
 #login {
   clear: both;
   display: block;
@@ -36,7 +41,7 @@ h1 {
   font-family: 'Josefin Slab', serif;
   margin-left: 20px;
 }
-
+*/
 
 .icons {
   display: block;
@@ -57,11 +62,61 @@ footer p {
 @media only screen and (min-width: 480px) {
 
   body {
-    background-image: url("../images/newbackground.png");
+    background-image: url("../images/bodybuilding1.jpg");
     background-color: #000;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: 100%;
+  }
+
+  h1 {
+    display: block;
+    text-align: left;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-family: 'Cinzel', serif;
+    font-size: 50px;
+    color: white;
+  }
+
+  header ul li {
+    clear: both;
+    display: block;
+    float: right;
+    margin-bottom: 10px;
+  }
+
+  header nav ul li a {
+    text-decoration: none;
+    color: white;
+  }
+
+  main {
+    margin-top: 100px;
+  }
+
+/* Bottom of Page */
+  .icons {
+    clear:both;
+    display: block;
+    width: 30px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+  }
+
+  footer p {
+    clear:both;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+    color: white;
   }
 }
