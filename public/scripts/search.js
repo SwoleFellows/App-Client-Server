@@ -6,7 +6,7 @@ $('#nav-search').hide();
 
 (function (module) {
 
-  let __API_URL__ = 'http://localhost:3000'
+  let __API_URL__ = 'https://swolefellows.herokuapp.com'
 
   const Search = function (rdo) { //rdo: rawDataObj
     Object.keys(rdo).forEach(key => this[key] = rdo[key]);
@@ -69,7 +69,7 @@ $('#nav-search').hide();
         $('#category').append(filterTemplate(val));
       }
       ));
-    $('select').one('change', function (e) {
+    $('select').on('change', function (e) {
       e.target.id === 'equipment'? $('#category').val('') : $('#equipment').val('')
       if (!e.target.value) Search.changePage()
       else {
