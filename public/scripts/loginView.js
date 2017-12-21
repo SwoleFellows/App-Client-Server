@@ -5,7 +5,7 @@ var app = app || {};
 (function (module) {
   const loginView = {};
 
-  let __API_URL__ = "https://swolefellows.herokuapp.com/"
+  let __API_URL__ = "https://swolefellows.herokuapp.com"
 
   loginView.loginForm = function() {
     $('#login-button').click(function() {
