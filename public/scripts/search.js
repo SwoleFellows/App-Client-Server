@@ -69,7 +69,7 @@ $('#nav-search').hide();
         $('#category').append(filterTemplate(val));
       }
       ));
-    $('select').one('change', function (e) {
+    $('select').on('change', function (e) {
       e.target.id === 'equipment'? $('#category').val('') : $('#equipment').val('')
       if (!e.target.value) Search.changePage()
       else {
