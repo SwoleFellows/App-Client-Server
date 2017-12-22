@@ -26,7 +26,7 @@ app.get('/search', (request, response) =>
   response.sendFile('search.html', {root: './public'}));
 app.get('/about', (request, response) =>
   response.sendFile('about.html', {root: './public'}));
-app.get('/404', (request, response) =>
+app.get('*', (request, response) =>
   response.sendFile('404.html', {root: './public'}));
 
 ///////////////// local database CRUD ////////////////////
