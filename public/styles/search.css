@@ -24,6 +24,7 @@ h1 {
 header {
   height: 60px;
 }
+
 header ul {
   position: absolute;
   top: 0;
@@ -168,10 +169,10 @@ main {
 footer {
  position: fixed;
  bottom: 0px;
- height: 5%;
+ height: 60px;
  width: 100%;
  background-color: #000;
- padding-bottom: 5%;
+ padding-bottom: 10px;
 }
 
 footer nav {
@@ -189,7 +190,7 @@ footer ul li {
 }
 
 footer p {
- padding-top: 2%;
+ padding-top: 5px;
  text-align: center;
  text-decoration: none;
  font-family: 'Julius Sans One', sans-serif;
@@ -197,13 +198,11 @@ footer p {
  background-color: #000;
 }
 
-
 .icons {
  width: 35px;
- height: 35px;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 480px) {
 
   body {
     background-image: url("../images/bodybuilding1.jpg");
@@ -211,7 +210,7 @@ footer p {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    background-size: 100%;
+    background-size: cover;
   }
 
   h1 {
@@ -240,98 +239,57 @@ footer p {
     margin-top: 100px;
   }
 
-/* Bottom of Page */
-footer {
-  height: 70px;
-  padding: 0;
-}
-
-footer nav {
-  text-align: left;
-  float: left;
-}
-
-.icons {
-  clear:both;
-  width: 30px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
-  color: white;
-}
-
-footer p {
-  clear: both;
-  position: absolute;
-  top: 0.25%;
-  right: 1%;
-  margin-right: 5%;
-  text-align: right;
-  color: white;
-}
-
-#save-result {
-  width: 60%;
-}
-
-#search-results {
-  text-align: center;
-  width: 80%;
-  margin: 0 auto;
-}
-
-.workout-result {
-  text-align: left;
-  display: inline-block;
-  width: 40%;
-  margin: 1%;
-}
-
-}
-
-@media screen and (min-width: 1900px) {
-
+  /* Bottom of Page */
   footer {
-    height: 25px;
+   position: fixed;
+   bottom: 0px;
+   height: 60px;
+   width: 100%;
+   background-color: #000;
+   padding-bottom: 10px;
+  }
+
+  footer nav {
+    padding-top: 5px;
   }
 
   footer ul {
-    text-align: left;
+    text-align: center;
   }
 
-  .icons {
-    clear:both;
-    width: 30px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    text-align: center;
-    color: white;
+  footer ul li {
+   width: 100%;
+   display: inline;
   }
 
   footer p {
-    clear:both;
-    /* position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0; */
-    margin-top: -40px;
-    text-align: center;
-    color: white;
+   padding-top: 5px;
+   text-align: center;
+   text-decoration: none;
+   font-family: 'Julius Sans One', sans-serif;
+   color: white;
+   background-color: #000;
   }
 
+  .icons {
+   width: 35px;
+  }
+
+  #save-result {
+    width: 60%;
+  }
+
+  #search-results {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .workout-result {
+    text-align: left;
+    display: inline-block;
+    width: 40%;
+    margin: 1%;
+  }
 
 }
-/* footer p {
-clear:both;
-position: absolute;
-right: 0;
-bottom: 0;
-left: 0;
-padding: 1rem;
-text-align: center;
-color: white;
-} */
