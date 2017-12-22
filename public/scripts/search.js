@@ -46,8 +46,8 @@ $('#nav-search').hide();
       $('main > *').hide();
     } else {
       if (!single) {
-        $('main > select').fadeIn(1000)
-        $('main > button').fadeIn(1000)
+        // $('main > select').fadeIn(1000)
+        $('main > section').fadeIn(1000)
       }
       $('#search-results').fadeIn(1000)
     }
