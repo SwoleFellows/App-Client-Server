@@ -1,0 +1,184 @@
+body {
+  background-image: url("../images/femalebodybuilding1.jpg");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+* p {
+  color: white;
+  text-align: center;
+  font-family: Arial;
+  font-size: 13px;
+}
+
+header {
+  width: 100%;
+}
+
+header nav ul {
+  text-align: center;
+  padding-top: 1%;
+}
+
+header ul li {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+  outline: 1px solid white;
+}
+
+header ul li a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+h1 {
+  display: block;
+  margin: 3% auto;
+  font-family: 'Cinzel', serif;
+  font-size: 30px;
+  color: black;
+  text-align: center;
+  background-color: white;
+  width: 250px;
+  border-radius: 15px;
+}
+
+h2, h3, h4, h5, h6 {
+  text-align: center;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  margin-left: 28px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  text-decoration: underline;
+}
+
+footer {
+ height: 50px;
+ width: 100%;
+ background-color: #000;
+ padding-top: 2%;
+ /* position: fixed; */
+ bottom: 0px;
+}
+
+footer ul li {
+ width: 100%;
+ display: inline;
+ padding: 5%;
+ margin: auto;
+}
+
+footer p {
+ padding-top: 2%;
+ text-align: center;
+ text-decoration: none;
+ font-family: 'Julius Sans One', sans-serif;
+ color: white;
+ background-color: #000;
+}
+
+
+.icons {
+ width: 35px;
+ height: 35px;
+}
+
+@media only screen and (min-width: 480px) {
+  body {
+    background-image: url("../images/bodybuilding1.jpg");
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+  }
+
+  body {
+    width: 960px;
+    margin: auto;
+  }
+
+  h1 {
+    display: block;
+    margin: 3% auto;
+    font-family: 'Cinzel', serif;
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    background: transparent;
+    width: 500px;
+  }
+
+  header ul li {
+    display: inline;
+    width: 100%;
+    outline: none;
+    font-size: 40px;
+    padding: 5%;
+    text-decoration: underline;
+  }
+
+  h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    margin: 5% auto;
+    text-decoration: underline;
+    font-size: 30px;
+  }
+
+  .about-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  * p {
+    color: white;
+    text-align: center;
+    font-family: Arial;
+    font-size: 20px;
+  }
+
+  footer {
+   height: 50px;
+   width: 100%;
+   padding-top: 1%;
+   background: black;
+   position: fixed;
+   bottom: 0px;
+   margin-top: 2%;
+  }
+
+  footer ul li {
+   width: 100%;
+   display: inline;
+   padding: 0%;
+   margin: auto;
+   background: transparent;
+  }
+
+  footer p {
+   /* padding-top: 2%; */
+   text-align: center;
+   text-decoration: none;
+   font-family: 'Julius Sans One', sans-serif;
+   color: white;
+   background: transparent;
+   margin-top: -3%;
+  }
+
+
+  .icons {
+   width: 40px;
+   height: 40px;
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/base.css">
+    <link rel="stylesheet" type="text/css" href="styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="styles/search.css">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Josefin+Slab|Open+Sans+Condensed:300" rel="stylesheet">
+    <title>Exercise Search</title>
+    <script id="results-template" type="text/x-handlebars-template">
+      <div data-exerciseId="{{id}}" class="workout-result">
+        <h2>{{name}}</h2>
+        <button class="more-button" value="{{id}}">More...</button>
+      </div>
+    </script>
+    <script id="save-template" type="text/x-handlebars-template">
+      <div data-exerciseId="{{id}}" id="save-result">
+        <button id="back">Back</button>
+        <h2>{{name}}</h2>
+        <div class="description">
+          {{{description}}}
+        </div>
+        <form id="save-form">
+          <select>
+            <option value="">Select a day...</option>
+            <option value="monday">Monday</option>
+            <option value="tuesday">Tuesday</option>
+            <option value="wednesday">Wednesday</option>
+            <option value="thursday">Thursday</option>
+            <option value="friday">Friday</option>
+            <option value="saturday">Saturday</option>
+            <option value="sunday">Sunday</option>
+          </select>
+            <input name="time" type="radio" value="1" checked>Workout 1</input>
+            <input name="time" type="radio" value="2">Workout 2</input>
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </script>
+    <script id="filter-template" type="text/x-handlebars-template">
+      <option value={{id}}>{{name}}</option>
+    </script>
+  </head>
+  <body>
+
+    <header>
+      <h1>SwoleFellows</h1>
+
+      <nav>
+        <ul>
+          <li id="nav-search"><a href="./search">Search</a></li>
+          <li id="nav-routine"><a href="./routine">My Routine</a></li>
+          <li id="nav-about"><a href="./about">About Us</a></li>
+          <li id="nav-logout"><a href="./index">Log Out</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="filters">
+        <select id="category"></select>
+        <select id="equipment"></select>
+      </section>
+
+      <section class="nav-btns">
+        <button class="api_prev" value="">Previous Page</button>
+        <button class="api_next" value="">Next Page</button>
+      </section>
+
+      <div id="search-results"></div>
+
+      <section class="nav-btns">
+        <button class="api_prev" value="">Previous Page</button>
+        <button class="api_next" value="">Next Page</button>
+      </section>
+    </main>
+
+    <footer>
+      <nav id="social-links">
+        <ul>
+          <li><a href="https://www.facebook.com"><img class="icons" src="./icons/fb-icon.png" alt="Link to Facebook"></a></li>
+          <li><a href="https://www.twiiter.com"><img class="icons" src="./icons/twit-icon.png" alt="Link to Twitter"></a></li>
+          <li><a href="https://www.instagram.com"><img class="icons" src="./icons/insta-icon.png" alt="Link to Instagram"></a></li>
+          <li><a href="https://www.slack.com"><img class="icons" src="./icons/slack-icon.png" alt="Link to Slack"></a></li>
+          <li><a href="https://www.github.com"><img class="icons" src="./icons/github-icon.png" alt="Link to Github"></a></li>
+        </ul>
+      </nav>
+      <p>SwoleFellows - 2017</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="./scripts/search.js"></script>
+  </body>
+</html>

@@ -1,0 +1,171 @@
+/*
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Cinzel', serif;
+font-family: 'Josefin Slab', serif;
+*/
+
+body {
+  background-image: url("../images/background1.png");
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* SwoleFellows Top of Screen */
+h1 {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 30px;
+  color: black;
+  background-color: white;
+  width: 250px;
+  border-radius: 15px;
+}
+
+/* Form I.D. */
+h2 {
+  text-align: center;
+  color: white;
+  font-family: 'Cinzel', serif;
+  margin-left: 28px;
+  margin-bottom: 5px;
+}
+
+/* A Spacer between SwoleFellows Header and Forms */
+ #spacer-top {
+   height: 50px;
+ }
+
+/* These are the Login and Register Buttons */
+#login-button {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding: 10px 10px 10px 230px;
+  width: 340px;
+  color: white;
+  border-radius: 0px;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition: 750ms;
+}
+
+#login-button:focus {
+  display: block;
+  padding: 10px 10px 10px 230px;
+  width: 340px;
+  border-radius: 20px;
+  border: none;
+  background-color: white;
+  color: black;
+  transition: 750ms;
+}
+
+#register-button{
+  display: block;
+  margin: 0 auto;
+  padding: 10px 10px 10px 255px;
+  width: 340px;
+  color: white;
+  border-radius: 0px;
+  border: none;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  transition: 750ms;
+}
+
+#register-button:focus {
+  display: block;
+  padding: 10px 10px 10px 255px;
+  width: 340px;
+  border-radius: 20px;
+  border: none;
+  background-color: white;
+  color: black;
+  transition: 750ms;
+}
+
+/* This Hides the Forms */
+.register, .login {
+  clear: both;
+  display: none;
+}
+
+/* Form Inputs */
+#login-form input {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 280px;
+  opacity: .9;
+}
+
+#register-form input {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 280px;
+  opacity: .9;
+}
+
+.form-btns {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  color: white;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
+
+.register_success {
+  display: none;
+  color: white;
+  text-align: center;
+}
+
+.invalid_info {
+  display: none;
+  color: white;
+}
+
+@media only screen and (min-width: 480px) {
+  body {
+    background-image: url("../images/background1.jpg");
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+
+  h1 {
+    margin-top: 200px;
+    font-family: 'Cinzel', serif;
+    font-size: 50px;
+    color: white;
+    width: 100%;
+    background: transparent;
+    text-align: center;
+  }
+}
