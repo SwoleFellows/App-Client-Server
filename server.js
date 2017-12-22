@@ -26,8 +26,6 @@ app.get('/search', (request, response) =>
   response.sendFile('search.html', {root: './public'}));
 app.get('/about', (request, response) =>
   response.sendFile('about.html', {root: './public'}));
-app.get('*', (request, response) =>
-  response.sendFile('404.html', {root: './public'}));
 
 ///////////////// local database CRUD ////////////////////
 
@@ -150,6 +148,8 @@ app.delete('/api/v1/users/:user_id', (request, response) => {
 createUsersTable()
 createWorkoutTable()
 
+app.get('*', (request, response) =>
+response.sendFile('404.html', {root: './public'}));
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}!`));
 
