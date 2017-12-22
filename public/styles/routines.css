@@ -1,5 +1,5 @@
 body {
-  background-image: url("../images/background1.png");
+  background-image: url("../images/femalebodybuilding1.jpg");
   background-color: #000;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -58,44 +58,6 @@ h2, h3, h4, h5, h6 {
   text-decoration: underline;
 }
 
-div {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.clearfix {
-  clear: both;
-}
-
-.float-left {
-  float: left;
-}
-
-.about-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-}
-
-.results {
-  margin-top: 10%;
-  margin-bottom: 10%;
-}
-
-.results_pic {
-  width: 250px;
-  height: 250px;
-  border-radius: 10px;
-  margin: auto;
-  display: block;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-#before_picture {
-  margin-top: 2%:
-}
-
 footer {
  height: 50px;
  width: 100%;
@@ -127,8 +89,16 @@ footer p {
  height: 35px;
 }
 
-
 @media only screen and (min-width: 480px) {
+  body {
+    background-image: url("../images/bodybuilding1.jpg");
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+  }
+
   body {
     width: 960px;
     margin: auto;
@@ -154,6 +124,15 @@ footer p {
     text-decoration: underline;
   }
 
+  h2, h3, h4, h5, h6 {
+    text-align: center;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    margin: 5% auto;
+    text-decoration: underline;
+    font-size: 30px;
+  }
+
   .about-img {
     width: 300px;
     height: 300px;
@@ -169,40 +148,14 @@ footer p {
     font-size: 20px;
   }
 
-  h2, h3, h4, h5, h6 {
-    text-align: center;
-    color: white;
-    font-family: 'Raleway', sans-serif;
-    margin: 5% auto;
-    text-decoration: underline;
-    font-size: 30px;
-  }
-
-  .about div {
-    overflow: auto;
-  }
-
-  .results_pic {
-    width: 400px;
-    height: 400px;
-    border-radius: 10px;
-    margin: auto;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  #results_text {
-    margin-bottom: 5%;
-  }
-
   footer {
    height: 50px;
    width: 100%;
-   padding-top: 2%;
-   background: transparent;
-   /* position: fixed; */
+   padding-top: 1%;
+   background: black;
+   position: fixed;
    bottom: 0px;
+   margin-top: 2%;
   }
 
   footer ul li {
@@ -214,7 +167,7 @@ footer p {
   }
 
   footer p {
-   padding-top: 2%;
+   /* padding-top: 2%; */
    text-align: center;
    text-decoration: none;
    font-family: 'Julius Sans One', sans-serif;
@@ -228,5 +181,4 @@ footer p {
    width: 40px;
    height: 40px;
   }
-
 }
