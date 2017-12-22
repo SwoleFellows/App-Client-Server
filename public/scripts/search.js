@@ -5,8 +5,8 @@ var app = app || {};
 $('#nav-search').hide();
 
 (function (module) {
-
-  let __API_URL__ = 'https://swolefellows.herokuapp.com'
+  // let __API_URL__ = 'http://localhost:3000'
+  let __API_URL__ = "https://swolefellows.herokuapp.com"
 
   const Search = function (rdo) { //rdo: rawDataObj
     Object.keys(rdo).forEach(key => this[key] = rdo[key]);
