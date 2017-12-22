@@ -45,9 +45,9 @@
   </head>
   <body>
 
-
     <header>
       <h1>SwoleFellows</h1>
+
       <nav>
         <ul>
           <li id="nav-search"><a href="./search">Search</a></li>
@@ -58,13 +58,22 @@
     </header>
 
     <main>
-      <select id="category"></select>
-      <select id="equipment"></select>
-      <button class="api_prev" value="">Prev</button>
-      <button class="api_next" value="">Next</button>
+      <section id="filters">
+        <select id="category"></select>
+        <select id="equipment"></select>
+      </section>
+
+      <section class="nav-btns">
+        <button class="api_prev" value="">Previous Page</button>
+        <button class="api_next" value="">Next Page</button>
+      </section>
+
       <div id="search-results"></div>
-      <button class="api_prev" value="">Prev</button>
-      <button class="api_next" value="">Next</button>
+
+      <section class="nav-btns">
+        <button class="api_prev" value="">Previous Page</button>
+        <button class="api_next" value="">Next Page</button>
+      </section>
     </main>
 
     <footer>

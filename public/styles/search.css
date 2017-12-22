@@ -14,7 +14,6 @@ body {
 
 h1 {
   display: block;
-  float: left;
   margin-top: 10px;
   margin-left: 10px;
   font-family: 'Cinzel', serif;
@@ -22,41 +21,117 @@ h1 {
   color: #ebf2f9;
 }
 
+header {
+  height: 60px;
+}
+header ul {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 header ul li {
-  clear: both;
-  display: block;
-  float: right;
-  margin-bottom: 10px;
+  margin: 10px;
+  font-size: 15px;
+  font-family: arial;
+  text-align: right;
 }
 
 header nav ul li a {
   text-decoration: none;
   color: white;
+  margin-right: 10px
 }
-/*
-#login {
-  clear: both;
-  display: block;
-  color: white;
-  font-family: 'Josefin Slab', serif;
-  margin-left: 20px;
-}
-*/
 
-.icons {
+#filters {
   display: block;
-  float: left;
-  width: 30px;
+  text-align: center;
+  margin: 15px;
+}
+
+.nav-btns {
+  display: block;
+  text-align: center;
+  margin-bottom: 15px;
+  height: 70px;
+}
+
+.nav-btns button {
+  width: 110px;
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+  border: 1px solid rgba(180, 180, 180, 0.7);
+  border-radius: 15px;
+  background-color: rgba(80, 80, 80, 0.5);
+  padding: 5px;
+}
+
+#equipment, #category {
+  width: 45%;
+  border: 2px solid #000;
+  padding: 3px 3px 3px 5px;
+  margin: 0 auto;
+  font: inherit;
+  outline: none;
+  line-height: 1.2;
+  background: #f8f8f8;
+  -webkit-appearance: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+
+.workout-result {
+    border-radius: 25px;
+    padding: 10px;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 80%;
+    background: white;
+    opacity: .9;
+}
+
+.workout-result button {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    width: 25%;
+}
+
+footer {
+ height: 50px;
+ width: 100%;
+ background-color: #000;
+ padding-top: 2%
+}
+
+footer ul li {
+ width: 100%;
+ display: inline;
+ padding: 5%;
+ margin: auto;
 }
 
 footer p {
-  clear:both;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
+ padding-top: 2%;
+ text-align: center;
+ text-decoration: none;
+ font-family: 'Julius Sans One', sans-serif;
+ color: white;
+ background-color: #000;
+}
+
+
+.icons {
+ width: 35px;
+ height: 35px;
 }
 
 @media only screen and (min-width: 480px) {
@@ -120,3 +195,14 @@ footer p {
     color: white;
   }
 }
+
+/* footer p {
+clear:both;
+position: absolute;
+right: 0;
+bottom: 0;
+left: 0;
+padding: 1rem;
+text-align: center;
+color: white;
+} */
