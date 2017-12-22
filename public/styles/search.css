@@ -67,7 +67,7 @@ header nav ul li a {
   padding: 5px;
 }
 
-#equipment, #category {
+#equipment, #category, #save-result select{
   width: 45%;
   border: 2px solid #000;
   padding: 3px 3px 3px 5px;
@@ -80,6 +80,62 @@ header nav ul li a {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+}
+
+#save-result select {
+  display: block;
+  margin: 0;
+}
+
+#save-result input {
+  display: inline-block;
+  margin: 0;
+}
+
+#save-result {
+  text-align: left;
+  position: relative;
+  background: white;
+  width: 85%;
+  margin: 0 auto;
+  font-size: 20px;
+  line-height: 2;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 80px;
+}
+
+#save-result h2 {
+  margin: 10px auto;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+#save-result button {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 0px 0px 60px 0px;
+  text-align: left;
+  font-style: italic;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: rgb(160,100,100)
+}
+
+#save-result #back {
+  top: 0;
+  left: 0;
+}
+
+#save-result form button {
+  bottom: 0;
+  right: 0;
+  border-radius: 60px 0 0 0;
+  background-color: rgba(100, 160, 100, 0.9);
+  text-align: right;
 }
 
 .workout-result {
@@ -105,18 +161,31 @@ header nav ul li a {
     width: 25%;
 }
 
+main {
+  padding-bottom: 50px;
+}
+
 footer {
- height: 50px;
+ position: fixed;
+ bottom: 0px;
+ height: 5%;
  width: 100%;
  background-color: #000;
- padding-top: 2%
+ padding-bottom: 5%;
+}
+
+footer nav {
+  padding-top: 5px;
+}
+
+footer ul {
+  text-align: center;
 }
 
 footer ul li {
  width: 100%;
  display: inline;
- padding: 5%;
- margin: auto;
+ margin: 0 5px;
 }
 
 footer p {
@@ -134,7 +203,7 @@ footer p {
  height: 35px;
 }
 
-@media only screen and (min-width: 480px) {
+@media screen and (min-width: 800px) {
 
   body {
     background-image: url("../images/bodybuilding1.jpg");
@@ -172,9 +241,68 @@ footer p {
   }
 
 /* Bottom of Page */
+footer {
+  height: 70px;
+  padding: 0;
+}
+
+footer nav {
+  text-align: left;
+  float: left;
+}
+
+.icons {
+  clear:both;
+  width: 30px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+}
+
+footer p {
+  clear: both;
+  position: absolute;
+  top: 0.25%;
+  right: 1%;
+  margin-right: 5%;
+  text-align: right;
+  color: white;
+}
+
+#save-result {
+  width: 60%;
+}
+
+#search-results {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.workout-result {
+  text-align: left;
+  display: inline-block;
+  width: 40%;
+  margin: 1%;
+}
+
+}
+
+@media screen and (min-width: 1900px) {
+
+  footer {
+    height: 25px;
+  }
+
+  footer ul {
+    text-align: left;
+  }
+
   .icons {
     clear:both;
-    display: block;
     width: 30px;
     right: 0;
     bottom: 0;
@@ -186,16 +314,17 @@ footer p {
 
   footer p {
     clear:both;
-    position: absolute;
+    /* position: absolute;
     right: 0;
     bottom: 0;
-    left: 0;
-    padding: 1rem;
+    left: 0; */
+    margin-top: -40px;
     text-align: center;
     color: white;
   }
-}
 
+
+}
 /* footer p {
 clear:both;
 position: absolute;
