@@ -6,7 +6,7 @@ $('#nav-routine').hide();
 
 (function (module) {
 
-  let __API_URL__ = 'https://swolefellows.herokuapp.com';
+  let __API_URL__ = 'http://localhost:3000';
 
   const Exercise = function (rdo) {//rdo: rawDataObj
     Object.keys(rdo).forEach(key => {
